@@ -1,0 +1,15 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: api-ingress-customers
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`customers.traefik-airlines`) || Host(`customers.traefik-airlines.localhost`)
+      services:
+        - name: customers-app
+          port: 3000

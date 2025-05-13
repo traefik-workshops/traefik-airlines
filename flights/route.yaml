@@ -1,0 +1,15 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: api-ingress-flights
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`flights.traefik-airlines`) || Host(`flights.traefik-airlines.localhost`)
+      services:
+        - name: flights-app
+          port: 3000
