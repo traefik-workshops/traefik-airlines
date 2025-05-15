@@ -6,6 +6,19 @@ metadata:
 spec:
   entryPoints:
     - web
+  routes:
+    - kind: Rule
+      match: Host(`customers.traefik-airlines`) || Host(`customers.traefik-airlines.localhost`)
+      services:
+        - name: customers-app
+          port: 3000
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: api-ingress-customers-secure
+spec:
+  entryPoints:
     - websecure
   routes:
     - kind: Rule
