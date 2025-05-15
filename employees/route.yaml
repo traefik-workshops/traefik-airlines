@@ -12,19 +12,3 @@ spec:
       services:
         - name: employees-app
           port: 3000
----
-apiVersion: traefik.io/v1alpha1
-kind: IngressRoute
-metadata:
-  name: api-ingress-employees-secure
-spec:
-  entryPoints:
-    - websecure
-  routes:
-    - kind: Rule
-      match: Host(`employees.traefik-airlines`) || Host(`employees.traefik-airlines.localhost`)
-      services:
-        - name: employees-app
-          port: 3000
-  tls:
-    certResolver: traefik-airlines
