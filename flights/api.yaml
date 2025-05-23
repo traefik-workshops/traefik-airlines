@@ -1,0 +1,16 @@
+---
+apiVersion: hub.traefik.io/v1alpha1
+kind: API
+metadata:
+  name: flights-api
+  namespace: traefik-airlines
+spec:
+  openApiSpec:
+    path: /openapi.yaml
+    override:
+      servers:
+        - url: http://flights.traefik-airlines.localhost:8080
+        - url: http://flights.traefik-airlines.k3d:8080
+        - url: http://flights.traefik-airlines.aks
+        - url: http://flights.traefik-airlines.eks
+        - url: http://flights.traefik-airlines.gke

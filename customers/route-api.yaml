@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: customers-ingress
+  annotations:
+    hub.traefik.io/api: customers-api
+spec:
+  entryPoints:
+    - web
+  routes:
+    - kind: Rule
+      match: Host(`customers.traefik-airlines`) || Host(`customers.traefik-airlines.localhost`)
+      services:
+        - name: customers-app
+          port: 3000
