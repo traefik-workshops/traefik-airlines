@@ -1,6 +1,0 @@
-namespace: traefik-airlines
-resources:
-  - ../customers/proxy.yaml
-  - ../employees/proxy.yaml
-  - ../flights/proxy.yaml
-  - ../tickets/proxy.yaml

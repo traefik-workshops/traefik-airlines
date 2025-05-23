@@ -1,0 +1,62 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: employees-data
+data:
+  api.json: |
+    {
+      "employees": [
+        { "id": 1, "firstName": "John", "lastName": "Doe", "role": "pilot", "homeAirport": "RIC" },
+        { "id": 2, "firstName": "Jane", "lastName": "Doe", "role": "engineer", "homeAirport": "CDG" },
+        { "id": 3, "firstName": "John", "lastName": "Smith", "role": "attendant", "homeAirport": "DTW" }
+      ]
+    }
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: employees-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: employees-app
+  template:
+    metadata:
+      labels:
+        app: employees-app
+    spec:
+      containers:
+        - name: api
+          image: ghcr.io/traefik-workshops/api-server:v0.1.0
+          args: ["-data", "/api/api.json", "-openapi", "/public/openapi.yaml", "-errorrate", "1"]
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+          - name: api-data
+            mountPath: /api
+          - name: openapi
+            mountPath: /public
+      volumes:
+        - name: api-data
+          configMap:
+            name: employees-data
+        - name: openapi
+          configMap:
+            name: employees-openapi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: employees-app
+  labels:
+    app: employees-app
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3000
+      name: api
+  selector:
+    app: employees-app
