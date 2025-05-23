@@ -1,0 +1,6 @@
+namespace: traefik-airlines
+resources:
+  - ../customers/hub.yaml
+  - ../employees/hub.yaml
+  - ../flights/hub.yaml
+  - ../tickets/hub.yaml
