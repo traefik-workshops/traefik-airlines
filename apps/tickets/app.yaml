@@ -2,14 +2,14 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: flights-data
+  name: tickets-data
 data:
   api.json: |
     {
-      "flights": [
-        { "id": 1, "code": "TL123", "src": "JFK", "dest": "CDG" },
-        { "id": 2, "code": "TL234", "src": "CDG", "dest": "JFK" },
-        { "id": 3, "code": "TL345", "src": "CDG", "dest": "LYS" }
+      "tickets": [
+        { "id": 1, "flightCode": "TL123", "fare": 500, "class": "first", "available": 5, "total": 20 },
+        { "id": 2, "flightCode": "TL234", "fare": 200, "class": "economy", "available": 2, "total": 5 },
+        { "id": 3, "flightCode": "TL345", "fare": 300, "class": "business", "available": 3, "total": 10 }
       ]
     }
 
@@ -17,16 +17,16 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flights-app
+  name: tickets-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: flights-app
+      app: tickets-app
   template:
     metadata:
       labels:
-        app: flights-app
+        app: tickets-app
     spec:
       containers:
         - name: api
@@ -41,22 +41,22 @@ spec:
       volumes:
         - name: api-data
           configMap:
-            name: flights-data
+            name: tickets-data
         - name: openapi
           configMap:
-            name: flights-openapi
+            name: tickets-openapi
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: flights-app
+  name: tickets-app
   labels:
-    app: flights-app
+    app: tickets-app
 spec:
   type: ClusterIP
   ports:
     - port: 3000
       name: api
   selector:
-    app: flights-app
+    app: tickets-app
