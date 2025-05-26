@@ -1,0 +1,7 @@
+namespace: traefik-airlines
+resources:
+  - ./middleware.yaml
+  - ./customers
+  - ./employees
+  - ./flights
+  - ./tickets
