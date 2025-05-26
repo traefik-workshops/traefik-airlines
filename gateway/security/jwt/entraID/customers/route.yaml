@@ -14,3 +14,5 @@ spec:
       services:
         - name: customers-app
           port: 3000
+      middlewares:
+        - name: jwt-entra-id
