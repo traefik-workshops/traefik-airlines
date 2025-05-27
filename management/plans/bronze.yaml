@@ -9,7 +9,6 @@ spec:
   description: "Bronze rate limits and quotas"
   rateLimit:
     limit: 1
-    burst: 10
     period: 10s
   quota:
     limit: 100

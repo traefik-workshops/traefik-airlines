@@ -9,7 +9,6 @@ spec:
   description: "Silver rate limits and quotas"
   rateLimit:
     limit: 10
-    burst: 100
     period: 10s
   quota:
     limit: 1000
