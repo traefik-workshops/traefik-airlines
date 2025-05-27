@@ -1,0 +1,16 @@
+---
+apiVersion: hub.traefik.io/v1alpha1
+kind: APICatalogItem
+metadata:
+  name: traefik-airlines-employees
+  namespace: traefik-airlines
+spec:
+  groups:
+    - employees
+  apis:
+    - name: customers-api
+    - name: flights-api
+    - name: employees-api
+    - name: tickets-api
+  apiPlan:
+    name: traefik-airlines-gold-plan
