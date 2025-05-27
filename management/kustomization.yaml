@@ -1,0 +1,7 @@
+namespace: traefik-airlines
+resources:
+  - ./base/customers
+  - ./base/employees
+  - ./base/flights
+  - ./base/tickets
+  - ./plans

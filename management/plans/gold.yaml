@@ -1,0 +1,16 @@
+---
+apiVersion: hub.traefik.io/v1alpha1
+kind: APIPlan
+metadata:
+  name: traefik-airlines-gold-plan
+  namespace: traefik-airlines
+spec:
+  title: "Traefik Airlines Gold Plan"
+  description: "Gold rate limits and quotas"
+  rateLimit:
+    limit: 100
+    burst: 1000
+    period: 10s
+  quota:
+    limit: 10000
+    period: 24h

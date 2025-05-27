@@ -1,0 +1,16 @@
+---
+apiVersion: hub.traefik.io/v1alpha1
+kind: APIPlan
+metadata:
+  name: traefik-airlines-silver-plan
+  namespace: traefik-airlines
+spec:
+  title: "Traefik Airlines Silver Plan"
+  description: "Silver rate limits and quotas"
+  rateLimit:
+    limit: 10
+    burst: 100
+    period: 10s
+  quota:
+    limit: 1000
+    period: 24h
