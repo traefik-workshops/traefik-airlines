@@ -1,0 +1,16 @@
+---
+apiVersion: hub.traefik.io/v1alpha1
+kind: ManagedSubscription
+metadata:
+  name: employees-subscription
+  namespace: traefik-airlines
+spec:
+  applications:
+    - appId: "employee"
+  apis:
+    - name: employees-api
+    - name: tickets-api
+    - name: customers-api
+  apiPlan:
+    name: gold
+  weight: 100

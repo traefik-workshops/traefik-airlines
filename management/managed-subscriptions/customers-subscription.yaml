@@ -1,0 +1,14 @@
+---
+apiVersion: hub.traefik.io/v1alpha1
+kind: ManagedSubscription
+metadata:
+  name: customers-subscription
+  namespace: traefik-airlines
+spec:
+  applications:
+    - appId: "customer"
+  apis:
+    - name: customers-api
+  apiPlan:
+    name: bronze
+  weight: 10
