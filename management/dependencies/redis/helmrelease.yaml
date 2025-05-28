@@ -2,6 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: traefik-redis
+  namespace: traefik
 spec:
   releaseName: traefik-redis
   targetNamespace: traefik
@@ -12,6 +13,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: bitnami
+        namespace: traefik
   values:
     auth:
       password: topsecretpassword
