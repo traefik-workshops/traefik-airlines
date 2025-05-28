@@ -10,5 +10,5 @@ spec:
   apis:
     - name: customers-api
   apiPlan:
-    name: bronze
+    name: traefik-airlines-bronze-plan
   weight: 10

@@ -12,5 +12,5 @@ spec:
     - name: tickets-api
     - name: customers-api
   apiPlan:
-    name: gold
+    name: traefik-airlines-gold-plan
   weight: 100
