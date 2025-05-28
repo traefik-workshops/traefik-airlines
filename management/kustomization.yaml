@@ -6,3 +6,4 @@ resources:
   - ./base/tickets
   - ./plans
   - ./catalog-items
+  - ./managed-subscriptions
