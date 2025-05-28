@@ -7,3 +7,4 @@ resources:
   - ./plans
   - ./catalog-items
   - ./managed-subscriptions
+  - ./portal.yaml

@@ -1,0 +1,33 @@
+---
+apiVersion: hub.traefik.io/v1alpha1
+kind: APIPortal
+metadata:
+  name: traefik-airlines-portal
+  namespace: traefik-airlines
+spec:
+  title: Traefik Airlines API Portal
+  description: "API Portal for Traefik Airlines"
+  trustedUrls:
+    - https://portal.traefik-airlines.aks
+    - https://portal.traefik-airlines.k3d
+    - https://portal.traefik-airlines.eks
+    - https://portal.traefik-airlines.gke
+    - https://portal.traefik-airlines.localhost
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-airlines-apiportal
+  namespace: traefik-airlines
+  annotations:
+    hub.traefik.io/api-portal: traefik-airlines-portal
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`portal.traefik-airlines.aks`) || Host(`portal.traefik-airlines.k3d`) || Host(`portal.traefik-airlines.eks`) || Host(`portal.traefik-airlines.gke`) || Host(`portal.traefik-airlines.localhost`)
+    kind: Rule
+    services:
+    - name: apiportal
+      namespace: traefik
+      port: 9903
