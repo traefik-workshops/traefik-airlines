@@ -7,7 +7,7 @@ metadata:
 spec:
   everyone: true
   apis:
-    - name: ticket-api
+    - name: tickets-api
     - name: flights-api
   apiPlan:
     name: traefik-airlines-bronze-plan
