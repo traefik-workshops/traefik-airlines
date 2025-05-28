@@ -6,6 +6,7 @@ metadata:
 spec:
   releaseName: traefik-redis
   targetNamespace: traefik
+  interval: 10m0s
   chart:
     spec:
       chart: redis
