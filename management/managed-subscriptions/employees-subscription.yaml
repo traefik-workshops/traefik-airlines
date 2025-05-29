@@ -6,11 +6,12 @@ metadata:
   namespace: traefik-airlines
 spec:
   applications:
-    - appId: "employee"
+    - appId: "employees"
   apis:
     - name: employees-api
     - name: tickets-api
     - name: customers-api
+    - name: flights-api
   apiPlan:
     name: traefik-airlines-gold-plan
   weight: 100
