@@ -1,6 +1,0 @@
-namespace: traefik-airlines
-resources:
-  - ./bronze.yaml
-  - ./silver.yaml
-  - ./gold.yaml
-  - ./platinum.yaml

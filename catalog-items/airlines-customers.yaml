@@ -10,4 +10,4 @@ spec:
     - name: tickets-api
     - name: flights-api
   apiPlan:
-    name: traefik-airlines-bronze-plan
+    name: traefik-airlines-silver-plan

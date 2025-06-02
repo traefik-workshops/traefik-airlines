@@ -1,5 +1,0 @@
-namespace: traefik-airlines
-resources:
-  - ../../../apps/employees
-  - ./route.yaml
-  - ./api.yaml

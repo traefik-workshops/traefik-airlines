@@ -1,4 +1,0 @@
-namespace: traefik-airlines
-resources:
-  - ./customers-subscription.yaml
-  - ./employees-subscription.yaml

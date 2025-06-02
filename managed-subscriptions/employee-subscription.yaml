@@ -2,7 +2,7 @@
 apiVersion: hub.traefik.io/v1alpha1
 kind: ManagedSubscription
 metadata:
-  name: employees-subscription
+  name: employee-subscription
   namespace: traefik-airlines
 spec:
   applications:

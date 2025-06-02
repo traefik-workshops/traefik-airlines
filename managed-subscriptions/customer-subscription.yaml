@@ -2,13 +2,14 @@
 apiVersion: hub.traefik.io/v1alpha1
 kind: ManagedSubscription
 metadata:
-  name: customers-subscription
+  name: customer-subscription
   namespace: traefik-airlines
 spec:
   applications:
     - appId: "customers"
   apis:
-    - name: customers-api
+    - name: flights-api
+    - name: tickets-api
   apiPlan:
-    name: traefik-airlines-bronze-plan
+    name: traefik-airlines-silver-plan
   weight: 10
