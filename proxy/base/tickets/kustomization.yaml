@@ -1,4 +1,0 @@
-namespace: traefik-airlines
-resources:
-  - ../../../apps/tickets
-  - ./route.yaml
