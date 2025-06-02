@@ -1,0 +1,34 @@
+namespace: traefik-airlines
+resources:
+  - ../../apps/customers/app.yaml
+  - ../../apps/customers/oas.yaml
+  - ../../apis/customers/route.yaml
+  - ../../apis/customers/api.yaml
+
+  - ../../apps/employees/app.yaml
+  - ../../apps/employees/oas.yaml
+  - ../../apis/employees/route.yaml
+  - ../../apis/employees/api.yaml
+
+  - ../../apps/flights/app.yaml
+  - ../../apps/flights/oas.yaml
+  - ../../apis/flights/route.yaml
+  - ../../apis/flights/api.yaml
+
+  - ../../apps/tickets/app.yaml
+  - ../../apps/tickets/oas.yaml
+  - ../../apis/tickets/route.yaml
+  - ../../apis/tickets/api.yaml
+
+  - ../../plans/bronze.yaml
+  - ../../plans/silver.yaml
+  - ../../plans/gold.yaml
+  - ../../plans/platinum.yaml
+
+  - ../../catalog-items/airlines-customer.yaml
+  - ../../catalog-items/airlines-employee.yaml
+
+  - ../../managed-subscriptions/customer-subscription.yaml
+  - ../../managed-subscriptions/employee-subscription.yaml
+  
+  

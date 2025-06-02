@@ -1,15 +1,19 @@
 namespace: traefik-airlines
 resources:
   - ../../middlewares/jwt/entraid/middleware.yaml
+
   - ../../apps/customers/app.yaml
   - ../../apps/customers/oas.yaml
   - ../../middlewares/jwt/entraid/customers/route.yaml
+
   - ../../apps/employees/app.yaml
   - ../../apps/employees/oas.yaml
   - ../../middlewares/jwt/entraid/employees/route.yaml
+
   - ../../apps/flights/app.yaml
   - ../../apps/flights/oas.yaml
   - ../../middlewares/jwt/entraid/flights/route.yaml
+
   - ../../apps/tickets/app.yaml
   - ../../apps/tickets/oas.yaml
   - ../../middlewares/jwt/entraid/tickets/route.yaml

@@ -3,12 +3,15 @@ resources:
   - ../../apps/customers/app.yaml
   - ../../apps/customers/oas.yaml
   - ../../routes/customers/route.yaml
+
   - ../../apps/employees/app.yaml
   - ../../apps/employees/oas.yaml
   - ../../routes/employees/route.yaml
+
   - ../../apps/flights/app.yaml
   - ../../apps/flights/oas.yaml
   - ../../routes/flights/route.yaml
+
   - ../../apps/tickets/app.yaml
   - ../../apps/tickets/oas.yaml
   - ../../routes/tickets/route.yaml
