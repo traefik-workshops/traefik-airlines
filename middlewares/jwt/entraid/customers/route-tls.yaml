@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: customers-ingress
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`customers.airlines.EXTERNAL_IP.traefik.me`)
+      services:
+        - name: customers-app
+          port: 3000
+      middlewares:
+        - name: jwt-entra-id
