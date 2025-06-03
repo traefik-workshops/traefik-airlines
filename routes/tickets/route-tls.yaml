@@ -12,5 +12,5 @@ spec:
       services:
         - name: tickets-app
           port: 3000
-      tls:
-        certResolver: traefik-airlines
+  tls:
+    certResolver: traefik-airlines

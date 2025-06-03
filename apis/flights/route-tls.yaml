@@ -14,5 +14,5 @@ spec:
       services:
         - name: flights-app
           port: 3000
-      tls:
-        certResolver: traefik-airlines
+  tls:
+    certResolver: traefik-airlines
