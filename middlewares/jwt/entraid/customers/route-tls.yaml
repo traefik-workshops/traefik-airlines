@@ -8,7 +8,7 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`customers.airlines.EXTERNAL_IP.traefik.me`)
+      match: Host(`customers.airlines.EXTERNAL_IP.sslip.io`)
       services:
         - name: customers-app
           port: 3000
