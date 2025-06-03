@@ -5,7 +5,7 @@ metadata:
   name: tickets-ingress
 spec:
   entryPoints:
-    - web
+    - websecure
   routes:
     - kind: Rule
       match: Host(`tickets.airlines.EXTERNAL_IP.traefik.me`)

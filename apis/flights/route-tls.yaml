@@ -7,7 +7,7 @@ metadata:
     hub.traefik.io/api: flights-api
 spec:
   entryPoints:
-    - web
+    - websecure
   routes:
     - kind: Rule
       match: Host(`flights.airlines.EXTERNAL_IP.traefik.me`)
