@@ -10,3 +10,17 @@ spec:
     override:
       servers:
         - url: https://flights.airlines.traefik.EXTERNAL_IP.sslip.io
+  cors:
+    allowHeadersList:
+      - "*"
+    allowOriginsList:
+      - "*"
+    allowMethodsList:
+      - "*"
+    exposeHeadersList:
+      - "*"
+    addVaryHeader: true
+    allowCredentials: true
+    allowOriginListRegex:
+      - ".*"
+    maxAge: 86400
