@@ -18,4 +18,5 @@ spec:
   values:
     auth:
       password: topsecretpassword
-    replicaCount: 1
+    replica:
+      replicaCount: 0
