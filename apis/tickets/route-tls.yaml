@@ -14,5 +14,7 @@ spec:
       services:
         - name: tickets-app
           port: 3000
+      middlewares:
+        - name: treblle
   tls:
     certResolver: traefik-airlines
