@@ -9,8 +9,8 @@ spec:
     path: /openapi.yaml
     override:
       servers:
-        - url: http://customers.traefik-airlines.localhost:8080
-        - url: http://customers.traefik-airlines.k3d:8080
-        - url: http://customers.traefik-airlines.aks
-        - url: http://customers.traefik-airlines.eks
-        - url: http://customers.traefik-airlines.gke
+        - url: http://customers.airlines.traefik.localhost:8080
+        - url: http://customers.airlines.traefik.k3d:8080
+        - url: http://customers.airlines.traefik.aks
+        - url: http://customers.airlines.traefik.eks
+        - url: http://customers.airlines.traefik.gke

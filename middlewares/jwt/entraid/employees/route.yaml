@@ -8,7 +8,7 @@ spec:
     - web
   routes:
     - kind: Rule
-      match: Host(`employees.traefik-airlines`) || Host(`employees.traefik-airlines.localhost`)
+      match: Host(`employees.airlines.traefik`) || Host(`employees.airlines.traefik.localhost`)
       services:
         - name: employees-app
           port: 3000

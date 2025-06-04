@@ -10,7 +10,7 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`tickets.airlines.EXTERNAL_IP.sslip.io`)
+      match: Host(`tickets.airlines.traefik.EXTERNAL_IP.sslip.io`)
       services:
         - name: tickets-app
           port: 3000

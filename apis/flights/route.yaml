@@ -10,7 +10,7 @@ spec:
     - web
   routes:
     - kind: Rule
-      match: Host(`flights.traefik-airlines`) || Host(`flights.traefik-airlines.localhost`)
+      match: Host(`flights.airlines.traefik`) || Host(`flights.airlines.traefik.localhost`)
       services:
         - name: flights-app
           port: 3000
