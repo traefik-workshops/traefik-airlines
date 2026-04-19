@@ -75,7 +75,15 @@ paths:
           $ref: "#/components/responses/Error"
         "529":
           $ref: "#/components/responses/Error"
+      security:
+        - ApiKeyAuth: []
 components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: Anthropic API key. Create one at https://console.anthropic.com.
   responses:
     Error:
       description: Error response.
