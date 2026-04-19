@@ -50,7 +50,7 @@ paths:
               $ref: "#/components/schemas/CreateMessageRequest"
       responses:
         "200":
-          description: Successful response. Either a complete Message or a stream of SSE events when `stream: true`.
+          description: "Successful response. Either a complete Message or a stream of SSE events when `stream: true`."
           content:
             application/json:
               schema:
